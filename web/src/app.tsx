@@ -13,6 +13,7 @@ import { fetchNui } from "./utils/fetchNui";
 import { isEnvBrowser } from "./utils/misc";
 import { useCompassLocationStore } from "./states/compass-location";
 import compass from "./components/compass";
+import PlayerAdditional from "./components/player-additional";
 
 if (isEnvBrowser()) {
   const body = document.body;
@@ -67,6 +68,7 @@ export function App() {
           <Compass />
         </>
       )}
+      <PlayerAdditional/>
     </>
   );
 }

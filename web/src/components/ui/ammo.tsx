@@ -5,27 +5,22 @@ export const Ammo = ({ammoName, weaponAmmo, totalAmmo}: {
     weaponAmmo: number,
     totalAmmo: number
 }) => {
-
+    ammoName
+    
     return <>
-        <div style={{
+        <div className={"grid grid-cols-2 gap-1"} style={{
             position: 'absolute',
-            bottom: '4vh',
-            right: '4vw',
-            height: '3.5vh',
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, auto)',
-            gap: '0.5vh'
+            bottom: '2rem',
+            right: '2rem',
+            width:'5rem'
         }}>
-            <DefaultBullet/>
-        </div>
-        <div style={{
-            position: 'absolute',
-            bottom: '3vh',
-            right: '2.52vw',
-        }}
-             className={"flex flex-col justify-center items-center"}>
-            <span className={"font-semibold text-2xl"} style={{color:"#06CE6B"}}>{weaponAmmo}</span>
-            <span className={"font-semibold"}>{totalAmmo}</span>
+            <div>
+                <DefaultBullet/>
+            </div>
+            <div className={"flex flex-col justify-end items-center"}>
+                <span className={"font-semibold text-2xl leading-4"} style={{color:"#06CE6B"}}>{weaponAmmo}</span>
+                <span className={"font-semibold leading-4"}>{totalAmmo}</span>
+            </div>
         </div>
     </>
 

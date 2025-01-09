@@ -8,8 +8,6 @@ import {debug} from "@/utils/debug";
 import React, {useCallback, useMemo} from "react";
 import Speedometer from "./ui/speedometer";
 import {TextProgressBar} from "./ui/text-progress-bar";
-import {MicRange} from "@/components/ui/mic-range.tsx";
-import {Ammo} from "@/components/ui/ammo.tsx";
 
 const CarHud = React.memo(function CarHud() {
     const [vehicleState, setVehicleState] = useVehicleStateStore();
@@ -39,7 +37,6 @@ const CarHud = React.memo(function CarHud() {
             );
             return null;
         }
-        console.log(playerState)
 
         return (
             <>
@@ -78,8 +75,6 @@ const CarHud = React.memo(function CarHud() {
                     </div>
 
                 </div>
-                <Ammo ammoName={"Hello"} weaponAmmo={10} totalAmmo={100} />
-                <MicRange range={playerState.voice} isTalking={playerState.mic}/>
             </>
         );
     }, [playerState.isInVehicle, vehicleState, playerState.isSeatbeltOn]);

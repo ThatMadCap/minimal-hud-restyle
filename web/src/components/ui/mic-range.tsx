@@ -3,7 +3,7 @@ import {useState} from "react";
 
 export const MicRange = ({range,isTalking}: { range: number,isTalking:boolean }) => {
     const [playerMicRange, setPlayerMicRange] = useState<number>(1);
-
+    
     if (range === 50) {
         setPlayerMicRange(2);
     } else if (range < 50) {
@@ -15,7 +15,7 @@ export const MicRange = ({range,isTalking}: { range: number,isTalking:boolean })
         playerMicRangWrapper: {
             position: 'absolute',
             bottom: '2vh',
-            right: '5vh',
+            right: '2vw',
             width: '5vh',
             height: '0.5vh',
             display: 'grid',

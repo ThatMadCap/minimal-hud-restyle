@@ -67,7 +67,7 @@ const PlayerStatus = () => {
                 </div>
                 {isUsingFramework && (
                     <>
-                        {typeof playerState.mic === "boolean" && playerState.mic === true ? (
+                        {/* {typeof playerState.mic === "boolean" && playerState.mic === true ? (
                             <StatBar
                                 Icon={FaMicrophone}
                                 value={playerState.mic ? 100 : 0}
@@ -81,7 +81,7 @@ const PlayerStatus = () => {
                                 color="#ffffff"
                                 vertical
                             />
-                        ) : null}
+                        ) : null} */}
 
                         <StatBar Icon={IoFastFood}
                                  value={playerState.hunger}

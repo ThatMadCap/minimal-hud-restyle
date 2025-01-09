@@ -13,6 +13,18 @@ export interface PlayerStateInterface {
   isInVehicle: boolean;
   mic : boolean;
   voice : number;
+  weapon: PlayerWeaponInterface | null;
+  ammoInInventory: number | null
+
+}
+
+export interface PlayerWeaponInterface {
+  ammo?:string
+  label:string
+  metadata:{
+    ammo?:number
+  }
+  name:string
 }
 
 const mockPlayerState: PlayerStateInterface = {
@@ -28,7 +40,10 @@ const mockPlayerState: PlayerStateInterface = {
   isSeatbeltOn: false,
   isInVehicle: true,
   mic: true,
+  weapon: null,
+  ammoInInventory: 100
 };
+
 
 const playerState = atom<PlayerStateInterface>(mockPlayerState);
 
