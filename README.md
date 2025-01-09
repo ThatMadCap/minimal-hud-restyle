@@ -59,4 +59,8 @@ This software uses the following open source packages:
 
 ## Support
 
+Support the original author, vipexv:<br>
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/A0A1UDRSE)
+
+Support MadCap:<br>
+<a href="https://ko-fi.com/madcap" target="_blank"><img src="https://assets-global.website-files.com/5c14e387dab576fe667689cf/64f1a9ddd0246590df69ea0b_kofi_long_button_red%25402x-p-500.png" alt="Support me on Ko-fi" width="250"></a>
