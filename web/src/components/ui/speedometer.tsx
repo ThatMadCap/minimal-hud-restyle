@@ -53,13 +53,31 @@ const Speedometer: React.FC<SpeedometerProps> = React.memo(function Speedometer(
     () =>
       [...Array(gears)].map((_, i) => {
         const angle = -120 + (i * 240) / (gears - 1);
+        const textPosition = polarToCartesian(0, 0, 30, angle); 
         return (
           <g key={`gear-${i}`}>
-            <path d={createGearLine(0, 0, 37, 43, angle)} stroke="#ced4da" strokeWidth="2.5" opacity="100" strokeLinecap="round" />
+            <path
+              d={createGearLine(0, 0, 37, 43, angle)}
+              stroke="#dee2e6"
+              strokeWidth="2.5"
+              opacity="100"
+              strokeLinecap="round"
+            />
+            <text
+              x={textPosition.x}
+              y={textPosition.y}
+              textAnchor="middle"
+              alignmentBaseline="middle"
+              fill="white"
+              fontSize="5" 
+              fontWeight="bold"
+            >
+              {i}
+            </text>
           </g>
         );
       }),
-    [gears, createGearLine],
+    [gears, createGearLine, polarToCartesian],
   );
 
   return (

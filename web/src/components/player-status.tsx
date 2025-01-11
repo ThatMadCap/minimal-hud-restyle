@@ -66,23 +66,9 @@ const PlayerStatus = () => {
                   {typeof playerState.mic === "boolean" && playerState.mic === true ? <StatBar Icon={FaMicrophone} value={playerState.mic ? 100 : 0} color="#FFFF00" vertical /> : typeof playerState.voice === "number" ? <StatBar Icon={FaMicrophone} value={playerState.voice} color="#ffffff" vertical /> : null}
 
                   <StatBar Icon={IoFastFood} value={playerState.hunger} color="#FB8607" vertical />
-                  <StatBar Icon={FaBottleWater} value={playerState.thirst} color="#2B78FC" vertical />
-                  {playerState.oxygen < 100 && (
-                  <StatBar
-                    Icon={FaPersonSwimming}
-                    value={playerState.oxygen}
-                    color="#00d4ff"
-                    vertical
-                  />
-                )}
-                {playerState.stamina < 100 && (
-                  <StatBar
-                    Icon={FaPersonRunning}
-                    value={playerState.stamina}
-                    color="#63e6be"
-                    vertical
-                  />
-                )}
+                  <StatBar Icon={FaBottleWater} value={playerState.thirst} color="#2B78FC" vertical /> 
+                  {playerState.oxygen < 100 && ( <StatBar Icon={FaPersonSwimming} value={playerState.oxygen} color="#00d4ff" vertical /> )} 
+                  {playerState.stamina < 100 && ( <StatBar Icon={FaPersonRunning} value={playerState.stamina} color="#63e6be" vertical /> )}
                   {typeof playerState.stress === "number" && playerState.stress > 0 && <StatBar Icon={FaBrain} value={playerState.stress} color="#FE2436" vertical />}
                 </div>
               </>
