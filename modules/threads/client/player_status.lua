@@ -94,9 +94,9 @@ function PlayerStatusThread:start(vehicleStatusThread, seatbeltLogic, framework)
                 vehicleStatusThread:start()
                 DisplayRadar(true)
                 logger.verbose("(playerStatus) (vehicleStatusThread) Vehicle status thread started.")
+             else
+                DisplayRadar(config.minimapWalking)
             end
-
-            DisplayRadar(isInVehicle)
 
             local player_data = {
                 health = pedHealth,
