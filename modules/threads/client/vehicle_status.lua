@@ -71,7 +71,7 @@ function VehicleStatusThread:start()
             elseif currentGear == 1 then
                 gearString = "1"
             elseif currentGear > 1 then
-                gearString = tostring(math.floor(currentGear - 1))
+                gearString = tostring(math.floor(currentGear))
             end
             -- Fix for vehicles that only have 1 gear
             if highGear == 1 then
