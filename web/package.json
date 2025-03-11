@@ -2,7 +2,7 @@
   "name": "minimal-hud",
   "author": "vipex",
   "private": true,
-  "version": "2.4.0",
+  "version": "2.41.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
