@@ -54,7 +54,7 @@ const Speedometer: React.FC<SpeedometerProps> = React.memo(function Speedometer(
   const gearLines = useMemo(
     () =>
       [...Array(gears)].map((_, i) => {
-        const angle = -120 + (i * 240) / (gears - 1);
+        const angle = -120 + (i * 240) / Math.max((gears - 1), 1);
         const textPosition = polarToCartesian(0, 0, 30, angle); 
         return (
           <g key={`gear-${i}`}>
@@ -74,7 +74,7 @@ const Speedometer: React.FC<SpeedometerProps> = React.memo(function Speedometer(
               fontSize="5" 
               fontWeight="bold"
             >
-              {i}
+              {i + 1}
             </text>
           </g>
         );
