@@ -34,6 +34,25 @@ if not IsDuplicityVersion() then
         interface:toggle()
     end, false)
 
+    -- Toggle HUD when pause menu is active
+    local isPauseMenuOpen = false
+    CreateThread(function()
+        while true do
+            local currentPauseMenuState = IsPauseMenuActive()
+
+            if currentPauseMenuState ~= isPauseMenuOpen then
+                isPauseMenuOpen = currentPauseMenuState
+
+                if isPauseMenuOpen then
+                    interface:toggle(false)
+                else
+                    interface:toggle(true)
+                end
+            end
+            Wait(isPauseMenuOpen and 250 or 500)
+        end
+    end)
+
     interface:on("APP_LOADED", function(_, cb)
         local data = {
             config = config,
