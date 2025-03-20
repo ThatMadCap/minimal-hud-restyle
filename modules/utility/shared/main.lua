@@ -18,9 +18,13 @@ utility.round = function(num, numDecimalPlaces)
 end
 
 utility.convertEngineHealthToPercentage = function(value)
-    local percentage = ((value + 4000) / 5000) * 100
+    -- Engine health ranges from 1000 (perfect) to 0 (about to catch fire)
+    -- Values below 0 are just shown as 0% since they're critically damaged
+    local clampedValue = math.max(0, math.min(value, 1000))
 
-    percentage = math.max(0, math.min(percentage, 100))
+    local percentage = (clampedValue / 1000) * 100
+
+    percentage = math.floor(percentage + 0.5)
 
     return percentage
 end

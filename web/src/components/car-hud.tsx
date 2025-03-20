@@ -34,7 +34,7 @@ const CarHud = React.memo(function CarHud() {
       <>
         <TextProgressBar icon={<FaGasPump />} value={vehicleState.fuel} iconSize="1.1vw" />
         <TextProgressBar icon={<FaFireAlt />} value={vehicleState.nos} />
-        <TextProgressBar icon={<PiEngineFill />} value={vehicleState.engineState ? 100 : 0} />
+        <TextProgressBar icon={<PiEngineFill />} value={vehicleState.engineHealth} />
         <TextProgressBar icon={<PiHeadlightsFill />} value={vehicleState.headlights} />
         <TextProgressBar icon={<PiSeatbeltFill />} value={playerState.isSeatbeltOn ? 100 : 0} iconSize="1.25vw" />
       </>
