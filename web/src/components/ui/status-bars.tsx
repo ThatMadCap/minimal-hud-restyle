@@ -70,7 +70,7 @@ export const StatBarSegmented = ({ Icon = TiHeartFullOutline, value = 20, color 
   return (
     <div className="flex items-center gap-1 w-full 4k:gap-2" {...props}>
       <Icon className="text-y_white text-[1vw] drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,1)]" />
-      <p className="text-[0.6vw] w-[20px] text-center drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,1)] font-bold" style={{ color: color }}>
+      <p className="text-[0.6vw] drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,1)] w-[20px] 4k:text-base 2k:text-sm text-center font-bold" style={{ color: color }}>
         {value}
       </p>
       <div className="relative flex gap-3 *:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,1)] w-full ml-1 h-[8px] 2k:h-3 rounded-[1px]">
