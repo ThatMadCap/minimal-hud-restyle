@@ -97,7 +97,7 @@ function VehicleStatusThread:start()
             end
 
             -- Vehicle headlights
-            local headlights = (lightsOn and highbeamsOn) and 100 or (lightsOn or highbeamsOn) and 50 or 0
+            local headlights = (highbeamsOn == 1) and 100 or (lightsOn == 1) and 50 or 0
 
             interface:message("state::vehicle::set", {
                 speedUnit = config.speedUnit,
