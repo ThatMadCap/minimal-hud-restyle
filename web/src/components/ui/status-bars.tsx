@@ -26,7 +26,7 @@ export const StatBar = ({ Icon = TiHeartFullOutline, value = 20, maxValue = 100,
           {value}
         </p>
       )}
-      <div className={`relative drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,1)] ${vertical ? "h-full 2k:w-[6px] w-[4px] 4k:w-[8px] rounded-full" : "w-full ml-1 h-2 2k:h-3"} bg-black/30  rounded-[1px] overflow-hidden`}>
+      <div className={`relative drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,1)] ${vertical ? "h-full 2k:w-[6px] w-[4px] 4k:w-[8px] rounded-full" : "w-full ml-1 h-2 2k:h-3 rounded-full" } bg-black/30 overflow-hidden`}>
         <div
           className={`absolute ${vertical ? "bottom-0 w-full" : "left-0 h-full"} transition-all bg-red-500 rounded-[1px] ease-in-out`}
           style={{
