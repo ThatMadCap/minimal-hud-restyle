@@ -79,8 +79,10 @@ function PlayerStatusThread:start(vehicleStatusThread, seatbeltLogic, framework)
             end
 
             local pedArmor = GetPedArmour(ped)
-            local pedHealthUnrestricted = math.floor(GetEntityHealth(ped) - 100)
-            local pedHealth = math.max(0, math.min(pedHealthUnrestricted, 100))
+            local pedMaxHealth = GetEntityMaxHealth(ped)
+            local pedCurrentHealth = GetEntityHealth(ped)
+            local pedHealthPercentage = math.floor(((pedCurrentHealth - 100) / (pedMaxHealth - 100)) * 100)
+            pedHealthPercentage = math.max(0, math.min(100, pedHealthPercentage))
             local pedHunger = framework and framework:getPlayerHunger() or nil
             local pedThirst = framework and framework:getPlayerThirst() or nil
             local pedStress = framework and framework:getPlayerStress() or nil
@@ -103,7 +105,7 @@ function PlayerStatusThread:start(vehicleStatusThread, seatbeltLogic, framework)
             end
 
             local player_data = {
-                health = pedHealth,
+                health = pedHealthPercentage,
                 armor = pedArmor,
                 hunger = pedHunger,
                 thirst = pedThirst,
